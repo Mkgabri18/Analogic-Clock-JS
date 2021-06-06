@@ -1,0 +1,123 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.pais {
+  &__lista {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+  }
+  &__elem {
+    margin-right: 0.5em;
+    a {
+      color: black;
+      text-decoration: none;
+      padding: 0.6em 1em;
+      background: #eee;
+      border-radius: 5%;
+      &:focus {
+        background: royalblue;
+        color: white;
+      }
+      &.active {
+        background: royalblue;
+        color: white;
+      }
+    }
+  }
+}
+
+.reloj {
+  margin: auto;
+  width: 30rem;
+  height: 30rem;
+  background: #fff;
+  border-radius: 50%;
+  position: relative;
+}
+
+.ora {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  left: calc(50% - 1em);
+  top: 0.3em;
+  transform-origin: center calc(250px - 1em);
+  span {
+    display: block;
+    width: 2em;
+    height: 1em;
+    text-align: center;
+  }
+}
+
+@for $i from 1 through 12 {
+  .ora:nth-child(#{$i}) {
+    transform: rotate(#{$i * 30}deg);
+
+    span {
+      display: block;
+      width: 1em;
+      transform: rotate(-#{$i * 30}deg);
+    }
+  }
+}
+
+.agujas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(180deg);
+}
+
+.aguja {
+  width: 2px;
+  position: absolute;
+  background: #000;
+  &.segundos {
+    height: 200px;
+    transform-origin: top center;
+    // animation: segundos 60s infinite steps(59);
+  }
+  &.minutos {
+    height: 170px;
+    width: 4px;
+    transform-origin: top center;
+    // animation: minutos 3600s infinite linear;
+  }
+  &.oras {
+    height: 120px;
+    width: 6px;
+    transform-origin: top center;
+    transition: all 0.5s;
+    // animation: oras 216000s infinite linear;
+  }
+}
+
+// @keyframes segundos {
+//   to {transform: rotate(1turn);}
+// }
+
+// @keyframes minutos {
+//   to {transform: rotate(1turn);}
+// }
+
+// @keyframes oras {
+//   to {transform: rotate(1turn);}
+// }

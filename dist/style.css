@@ -1,0 +1,202 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.pais__lista {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+.pais__elem {
+  margin-right: 0.5em;
+}
+.pais__elem a {
+  color: black;
+  text-decoration: none;
+  padding: 0.6em 1em;
+  background: #eee;
+  border-radius: 5%;
+}
+.pais__elem a:focus {
+  background: royalblue;
+  color: white;
+}
+.pais__elem a.active {
+  background: royalblue;
+  color: white;
+}
+
+.reloj {
+  margin: auto;
+  width: 30rem;
+  height: 30rem;
+  background: #fff;
+  border-radius: 50%;
+  position: relative;
+}
+
+.ora {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  left: calc(50% - 1em);
+  top: 0.3em;
+  transform-origin: center calc(250px - 1em);
+}
+.ora span {
+  display: block;
+  width: 2em;
+  height: 1em;
+  text-align: center;
+}
+
+.ora:nth-child(1) {
+  transform: rotate(30deg);
+}
+.ora:nth-child(1) span {
+  display: block;
+  width: 1em;
+  transform: rotate(-30deg);
+}
+
+.ora:nth-child(2) {
+  transform: rotate(60deg);
+}
+.ora:nth-child(2) span {
+  display: block;
+  width: 1em;
+  transform: rotate(-60deg);
+}
+
+.ora:nth-child(3) {
+  transform: rotate(90deg);
+}
+.ora:nth-child(3) span {
+  display: block;
+  width: 1em;
+  transform: rotate(-90deg);
+}
+
+.ora:nth-child(4) {
+  transform: rotate(120deg);
+}
+.ora:nth-child(4) span {
+  display: block;
+  width: 1em;
+  transform: rotate(-120deg);
+}
+
+.ora:nth-child(5) {
+  transform: rotate(150deg);
+}
+.ora:nth-child(5) span {
+  display: block;
+  width: 1em;
+  transform: rotate(-150deg);
+}
+
+.ora:nth-child(6) {
+  transform: rotate(180deg);
+}
+.ora:nth-child(6) span {
+  display: block;
+  width: 1em;
+  transform: rotate(-180deg);
+}
+
+.ora:nth-child(7) {
+  transform: rotate(210deg);
+}
+.ora:nth-child(7) span {
+  display: block;
+  width: 1em;
+  transform: rotate(-210deg);
+}
+
+.ora:nth-child(8) {
+  transform: rotate(240deg);
+}
+.ora:nth-child(8) span {
+  display: block;
+  width: 1em;
+  transform: rotate(-240deg);
+}
+
+.ora:nth-child(9) {
+  transform: rotate(270deg);
+}
+.ora:nth-child(9) span {
+  display: block;
+  width: 1em;
+  transform: rotate(-270deg);
+}
+
+.ora:nth-child(10) {
+  transform: rotate(300deg);
+}
+.ora:nth-child(10) span {
+  display: block;
+  width: 1em;
+  transform: rotate(-300deg);
+}
+
+.ora:nth-child(11) {
+  transform: rotate(330deg);
+}
+.ora:nth-child(11) span {
+  display: block;
+  width: 1em;
+  transform: rotate(-330deg);
+}
+
+.ora:nth-child(12) {
+  transform: rotate(360deg);
+}
+.ora:nth-child(12) span {
+  display: block;
+  width: 1em;
+  transform: rotate(-360deg);
+}
+
+.agujas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(180deg);
+}
+
+.aguja {
+  width: 2px;
+  position: absolute;
+  background: #000;
+}
+.aguja.segundos {
+  height: 200px;
+  transform-origin: top center;
+}
+.aguja.minutos {
+  height: 170px;
+  width: 4px;
+  transform-origin: top center;
+}
+.aguja.oras {
+  height: 120px;
+  width: 6px;
+  transform-origin: top center;
+  transition: all 0.5s;
+}
